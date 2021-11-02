@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cedarville+Cursive&family=Courgette&family=Courier+Prime:ital@0;1&family=Dancing+Script:wght@500&family=Gloria+Hallelujah&family=Oswald:wght@300&family=Overpass+Mono&family=Peddana&family=Roboto:wght@100&family=Rubik:ital,wght@0,300;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+        
+    <title>Document</title>
+</head>
+<body>
+
+<div class="menu">
+       <div class="file active-menu">File</div>
+    <div class="home">Home</div>
+</div>
+<div class="menu-options">
+    <div class="file-menu-options active ">
+        <div class="new">New</div>
+        <div class="open">Open</div>
+        <div class="save">save</div>
+    </div>
+    <div class="home-menu-options">
+        <div class="formatting">
+            <div class="fontName">
+                <select name="font" id="font" onclick="event.stopPropagation();">
+                    <option value="arial" style="font-family: 'arial'">Arial</option>
+                    <option value="'Caveat', cursive" style="font-family: 'Caveat', cursive;">Caveat</option>
+                    <option value="'Cedarville Cursive', cursive" style="font-family: 'Cedarville Cursive', cursive;">Cedarville</option>
+                    <option value="'Courgette', cursive" style="font-family: 'Courgette', cursive;">Courgette</option>
+                    <option value='Courier Prime', monospace"" style="font-family:'Courier Prime', monospace ;">Courier Prime</option>
+                    <option value="'Dancing Script', cursive" style="font-family: 'Dancing Script', cursive;">Dancing Script</option>
+                    <option value="'Gloria Hallelujah', cursive" style="font-family:'Gloria Hallelujah', cursive ;">Gloria Hallelujah</option>
+                    <option value="'Oswald', sans-serif" style="font-family:'Oswald', sans-serif ;">Oswald</option>
+                    <option value="Overpass Mono', monospace" style="font-family:'Overpass Mono', monospace ;">Overpass Mono</option>
+                    <option value="'Peddana', serif" style="font-family: 'Peddana', serif;">Peddana</option>
+                    <option value="'Roboto', sans-serif" style="font-family:'Roboto', sans-serif ;">Roboto</option>
+                    <option value="'Rubik', sans-serif" style="font-family:'Rubik', sans-serif ;">Rubik</option>
+                    <option value="'Yellowtail', cursive" style="font-family:'Yellowtail', cursive ;">Yellowtail</option>
+                </select>
+            </div>
+            <div class="fontStyler">
+                <input type="button" id="bold" value="B" style="font-weight: bold;">
+                <input type="button" id="underline" value="U" style="text-decoration: underline;">
+                <input type="button" id="italic" value="I" style="font-style: italic;">
+            </div>
+        </div>
+        <div class="style">
+            <div class="font-size">
+                <select name="fontsize" id="fontsize">
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                </select>
+            </div>
+            <div class="color">
+                <input type="color" name="fontcolor" id="fontcolor">
+                <input type="color" name="cellcolor" id="cellcolor">
+            </div>
+        </div>
+        <div class="alignment">
+            <input type="button" value="L" class="left">
+            <input type="button" value="C" class="center">
+            <input type="button" value="R" class="right">
+        </div>
+
+    </div>
+    </div>
+</div>
+<div class="formula-input">
+    <img src="/home/lakshay/Desktop/dev_pepcoding/excel/fx1.png" alt="" style="height: 24px; width: 29px; margin-left: 1px;">
+
+    <input id="address" type="text" disabled/>
+    <input id="formula" type="text"/>
+</div>
+<div class="content">
+    <div class="top-left-cell"></div>
+    <div class="top-row">
+        <%for(let j=0 ; j<26 ; j++){%>
+            <div class="top-row-cell" contenteditable="false"  cid= <%=j%>>
+              <%=  String.fromCharCode(65+j)%>
+            </div>
+         <%}%>
+    </div>    
+   
+    <div class="left-col">
+        <%for(let j=0 ; j<100 ; j++){%>
+            <div class="left-col-cell" contenteditable="false"  cid= <%=j%>>
+              <%= (1+j)%>
+            </div>
+         <%}%>
+    </div>
+
+
+    <div class="cells" id="cells">
+        <%for(let i=0 ; i<100 ; i++){%>
+            <div class="row">
+                <%for(let j=0 ; j<26 ; j++){%>
+                    <div class="cell" contenteditable="true" rid= <%=i%> cid= <%=j%>>
+                    </div>
+                 <%}%>
+            </div>
+         <%}%>
+    </div>
+    </div>
+</div>
+
+<div class="sheets">
+<div class="sheet-list">
+    <div class="sheet active-sheet" sid="0">sheet1</div>
+    
+</div>
+<div class="add">+</div>
+
+</div>
+
+
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
